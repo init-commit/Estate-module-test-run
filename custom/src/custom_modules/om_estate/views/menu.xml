@@ -9,7 +9,7 @@
                 <field name = "context">{} </field>
                 <field name = "help" type = "html">
                     <p>
-                            Create an agent for us
+                            Create an agent for us!
                     </p>
                 </field>
             </record> 
