@@ -1,0 +1,6 @@
+- Custom_modules is a folder that will contain my Custom_modules
+    eg. estate is a module
+- name of the folder/module is it's technical name
+- Manifest.py files contain details about the modules I am creating
+    eg. Name. version, summary. Website, author.
+    It is a dictonary with key-value pairs

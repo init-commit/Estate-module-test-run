@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <menuitem id = "menu_realtors_root"
+            name="Realtors"
+            parent="menu-estate-root"
+            action=""
+            sequence="0"/>
+</odoo>
