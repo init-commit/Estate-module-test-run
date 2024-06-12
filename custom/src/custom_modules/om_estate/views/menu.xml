@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
 	<record id="view_estate_agent_tree" model="ir.ui.view">
 		<!-- view_modelname_tree is the naming convention to follow for the id in tree/list view-->
 		<field name="name">estate.agent.tree </field>
@@ -31,11 +30,23 @@
 						</group>
 					</group>
 				</sheet>
-				
 				<!-- group tag is important so that the 
 				form has labels otherwise they will  ne invisible
 				sheet tag is like a div in html -->
 			</form>
+		</field>
+	</record>
+
+	<!-- Search view is just above the action -->
+	<record id="view_estate_agent_search" model="ir.ui.view">
+		<!-- view_modelname_search is the naming convention to follow -->
+		<field name="name">estate.agent.search </field>
+		<field name="model">estate.agent</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string="Realtor Name"/>
+				<!-- <field name="age"/> -->
+			</search>
 		</field>
 	</record>
 
