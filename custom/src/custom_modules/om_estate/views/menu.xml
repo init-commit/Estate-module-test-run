@@ -8,10 +8,14 @@
 			<form>
 				<sheet>
 					<group>
-						<field name="name"/>
-						<field name="age"/>
-						<field name="phone"/>
-						<field name="gender"/>
+						<group>
+							<field name="name"/>
+							<field name="age"/>
+						</group>
+						<group>
+							<field name="phone"/>
+							<field name="gender"/>
+						</group>
 					</group>
 				</sheet>
 				
