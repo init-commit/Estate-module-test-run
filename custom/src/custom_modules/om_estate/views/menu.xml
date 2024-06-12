@@ -47,6 +47,15 @@
 			<search>
 				<field name="name" string="Realtor Name" filter_domain="['|', ('name', 'ilike', self), ('age', 'ilike', self)]"/>
 				<!-- <field name="age"/> -->
+				<filter name="filter by gender" string="Male Realtors" domain="[('gender', '=', 'male')]"/>
+				<!-- do the same next filters eg female 
+				 the result of having both filters active results in a Male or Femaile option.
+				 To get and AND result, we add a <separator /> tag in between the two filter tags
+				 In this case for gender, no person can exist with 2 genders so the result is an empty UI/ filter
+				-->
+				<group expand="0" string="group By">
+				<filter name="group_by_gender" string="Gender" context="{'group_by' : 'gender'}"/>
+				</group>
 			</search>
 		</field>
 	</record>
