@@ -8,6 +8,7 @@
 			<tree>
 				<field name="name" string="Realtor Name"/>
 				<field name="age"/>
+				<field name="gender"/>
 			</tree>
 		</field>
 	</record>
@@ -44,7 +45,7 @@
 		<field name="model">estate.agent</field>
 		<field name="arch" type="xml">
 			<search>
-				<field name="name" string="Realtor Name"/>
+				<field name="name" string="Realtor Name" filter_domain="['|', ('name', 'ilike', self), ('age', 'ilike', self)]"/>
 				<!-- <field name="age"/> -->
 			</search>
 		</field>
