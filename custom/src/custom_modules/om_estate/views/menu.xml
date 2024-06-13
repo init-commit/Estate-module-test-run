@@ -28,6 +28,7 @@
 						<group>
 							<field name="phone"/>
 							<field name="gender"/>
+							<field name="active" invisible="1"/>
 						</group>
 					</group>
 				</sheet>
@@ -47,7 +48,8 @@
 			<search>
 				<field name="name" string="Realtor Name" filter_domain="['|', ('name', 'ilike', self), ('age', 'ilike', self)]"/>
 				<!-- <field name="age"/> -->
-				<filter name="filter by gender" string="Male Realtors" domain="[('gender', '=', 'male')]"/>
+				<filter name="filter_gender" string="Male Realtors" domain="[('gender', '=', 'male')]"/>
+				<filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
 				<!-- do the same next filters eg female 
 				 the result of having both filters active results in a Male or Femaile option.
 				 To get and AND result, we add a <separator /> tag in between the two filter tags

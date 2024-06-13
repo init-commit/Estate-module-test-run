@@ -10,6 +10,7 @@ class EstateAgent(models.Model):
     age = fields.Integer(string='Age')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string='Gender')
     phone = fields.Char(string='Phone')
+    active = fields.Boolean(string="Active", default=True)
 
 
 # time to add out menus, view from the xml files
