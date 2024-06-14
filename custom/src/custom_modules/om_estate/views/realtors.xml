@@ -75,6 +75,6 @@
 		</field> -->
 	</record>
 	<menuitem id="menu-estate-root" name="Estate" web_icon="om_estate,static/description/icon.png" action="action_estate_agent" sequence="0"/>
-	<menuitem id="menu_listings_root" name="Listings" parent="menu-estate-root" action="action_estate_agent" sequence="1"/>
-	<menuitem id="menu_customers_root" name="Customers" parent="menu-estate-root" action="action_estate_agent" sequence="2"/>
+	<menuitem id="menu_listings_root" name="Listings" parent="menu-estate-root" action="" sequence="1"/>
+	<menuitem id="menu_customers_root" name="Customers" parent="menu-estate-root" action="" sequence="2"/>
 </odoo>

@@ -16,6 +16,7 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/realtors.xml',
+        'views/male_realtors_view.xml',
     ],
     # demo will be for importing demo files
     'demo' : [],
