@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+	<record id="view_estate_agent_tree" model="ir.ui.view">
+		<!-- view_modelname_tree is the naming convention to follow for the id in tree/list view-->
+		<field name="name">estate.agent.tree </field>
+		<field name="model">estate.agent</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Realtor Name"/>
+				<field name="age"/>
+				<field name="gender"/>
+			</tree>
+		</field>
+	</record>
 
-        <menuitem id = "menu_realtors_root"
-            name="Realtors"
-            parent="menu-estate-root"
-            action=""
-            sequence="0"/>
+	<record id="view_estate_agent_form" model="ir.ui.view">
+		<!-- view_modelname_form is the naming convention to follow for the id-->
+		<field name="name">estate.agent.form </field>
+		<field name="model">estate.agent</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<group>
+							<field name="name"/>
+							<field name="age"/>
+						</group>
+						<group>
+							<field name="phone"/>
+							<field name="gender"/>
+							<field name="active" invisible="1"/>
+						</group>
+					</group>
+				</sheet>
+				<!-- group tag is important so that the 
+				form has labels otherwise they will  ne invisible
+				sheet tag is like a div in html -->
+			</form>
+		</field>
+	</record>
+
+	<!-- Search view is just above the action -->
+	<record id="view_estate_agent_search" model="ir.ui.view">
+		<!-- view_modelname_search is the naming convention to follow -->
+		<field name="name">estate.agent.search </field>
+		<field name="model">estate.agent</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" string="Realtor Name" filter_domain="['|', ('name', 'ilike', self), ('age', 'ilike', self)]"/>
+				<!-- <field name="age"/> -->
+				<filter name="filter_gender" string="Male Realtors" domain="[('gender', '=', 'male')]"/>
+				<filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+				<!-- do the same next filters eg female 
+				 the result of having both filters active results in a Male or Femaile option.
+				 To get and AND result, we add a <separator /> tag in between the two filter tags
+				 In this case for gender, no person can exist with 2 genders so the result is an empty UI/ filter
+				-->
+				<group expand="0" string="group By">
+				<filter name="group_by_gender" string="Gender" context="{'group_by' : 'gender'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+
+	<record id = "action_estate_agent" model="ir.actions.act_window">
+		<field name = "name">Realtors</field>
+		<field name = "type">ir.actions.act_window</field>
+		<field name = "res_model">estate.agent</field>
+		<field name = "view_mode">tree,form</field>
+		<field name = "context">{} </field>
+		<!-- <field name = "help" type = "html">
+			<p>
+                Create an agent for us!
+			</p>
+		</field> -->
+	</record>
+	<menuitem id="menu-estate-root" name="Estate" web_icon="om_estate,static/description/icon.png" action="action_estate_agent" sequence="0"/>
+	<menuitem id="menu_listings_root" name="Listings" parent="menu-estate-root" action="action_estate_agent" sequence="1"/>
+	<menuitem id="menu_customers_root" name="Customers" parent="menu-estate-root" action="action_estate_agent" sequence="2"/>
 </odoo>
