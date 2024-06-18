@@ -7,8 +7,8 @@ class EstateAgent(models.Model):
     _description = 'Estate Agent'
     
     # Fields are column names
-    name = fields.Char(string='Name')
-    age = fields.Integer(string='Age')
+    name = fields.Char(string='Name', tracking=True)
+    age = fields.Integer(string='Age', tracking=True)
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string='Gender')
     phone = fields.Char(string='Phone')
     active = fields.Boolean(string="Active", default=True)
