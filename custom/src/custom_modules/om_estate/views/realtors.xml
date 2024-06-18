@@ -35,6 +35,11 @@
 				<!-- group tag is important so that the 
 				form has labels otherwise they will  ne invisible
 				sheet tag is like a div in html -->
+				<div class="oe_chatter">
+					<field name="message_follower_ids" group="base.group_user" />
+					<field name="activity_ids" />
+					<field name="message_ids" />
+				</div>
 			</form>
 		</field>
 	</record>
