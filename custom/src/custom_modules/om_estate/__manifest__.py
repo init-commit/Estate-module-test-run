@@ -10,7 +10,7 @@
     'author' : 'Everlast',
     'website' : 'www.everlast.org',
     'summary' : 'My second module',
-    'depends' : [],
+    'depends' : ['mail'],
     # data will contain all the xml files / importing
     'data' : [
         'security/ir.model.access.csv',

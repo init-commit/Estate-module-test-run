@@ -2,6 +2,7 @@
 from odoo import api, fields, models # type: ignore #
 
 class EstateAgent(models.Model):
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _name = 'estate.agent'  # name of the table to be created 
     _description = 'Estate Agent'
     
