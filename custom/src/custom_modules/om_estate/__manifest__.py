@@ -17,6 +17,7 @@
         'views/menu.xml',
         'views/realtors.xml',
         'views/male_realtors_view.xml',
+        'views/listings_view.xml'
     ],
     # demo will be for importing demo files
     'demo' : [],
