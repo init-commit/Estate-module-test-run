@@ -4,3 +4,26 @@
 - Manifest.py files contain details about the modules I am creating
     eg. Name. version, summary. Website, author.
     It is a dictonary with key-value pairs
+
+
+<field name="name" string="Realtor Name" filter_domain="['|', ('name', 'ilike', self), ('age', 'ilike', self)]"/>
+				<!-- <field name="age"/> -->
+				<filter name="filter_gender" string="Male Realtors" domain="[('gender', '=', 'male')]"/>
+				<filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+				<!-- do the same next filters eg female 
+				 the result of having both filters active results in a Male or Femaile option.
+				 To get and AND result, we add a <separator /> tag in between the two filter tags
+				 In this case for gender, no person can exist with 2 genders so the result is an empty UI/ filter
+				-->
+				<group expand="0" string="group By">
+				<filter name="group_by_gender" string="Gender" context="{'group_by' : 'gender'}"/>
+				</group>
+				<searchpanel>
+					<field name="gender" string="" enable_counters="1" icon="fa-users" select="multi"/>
+				</searchpanel>
+
+
+When creating a many2one, first create the model, add a field 
+called model_id (must end with an _id eg realtor_id), import the model
+in the __init__.py file and create its view. To enalble its listing, modify the 
+security file. REFRESHER TO BE DONE WITH NEXT MODEL
