@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access.estate.agent,access_estate_agent,om_estate.model_estate_agent,base.group_user,1,1,1,1
+access.estate.listings,access_estate_listings,om_estate.model_estate_listings,base.group_user,1,1,1,1
