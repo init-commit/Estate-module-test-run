@@ -9,6 +9,17 @@
 				<!-- <field name="name" string="Realtor Name"/>
 				<field name="age"/>
 				<field name="gender"/> -->
+				<field name="realtor_id"/>
+				<!-- <field name="listing_date"/> -->
+				<field name="listing_time"/>
+				<field name="name"/>
+				<field name="size_in_sq"/>
+				<field name="status"/>
+				<field name="purchase_value"/>
+				<field name="lease_value"/>
+				<field name="phone"/>
+				<field name="active" invisible="1"/>
+
 			</tree>
 		</field>
 	</record>
@@ -22,7 +33,17 @@
 				<sheet>
 					<group>
 						<group>
-							<field name="realtor_id                 "/>
+							<field name="realtor_id"/>
+							<!-- <field name="listing_date"/> -->
+							<field name="listing_time"/>
+							<field name="name"/>
+							<field name="size_in_sq"/>
+							<field name="status"/>
+							<field name="purchase_value"/>
+							<field name="lease_value"/>
+							<field name="phone"/>
+							<field name="active" invisible="1"/>
+
 						</group>
 					</group>
 				</sheet>
